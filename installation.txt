@@ -1,0 +1,107 @@
+#/*
+#[folpindo@localhost jenkins]$ wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
+#--2021-02-12 00:35:15--  http://mirrors.jenkins.io/war-stable/latest/jenkins.war
+#Resolving mirrors.jenkins.io (mirrors.jenkins.io)... 52.202.51.185
+#Connecting to mirrors.jenkins.io (mirrors.jenkins.io)|52.202.51.185|:80... connected.
+#HTTP request sent, awaiting response... 302 Found
+#Location: http://ftp-chi.osuosl.org/pub/jenkins/war-stable/2.263.4/jenkins.war [following]
+#--2021-02-12 00:35:16--  http://ftp-chi.osuosl.org/pub/jenkins/war-stable/2.263.4/jenkins.war
+#Resolving ftp-chi.osuosl.org (ftp-chi.osuosl.org)... 64.50.236.52, 2600:3402:200:227::2
+#Connecting to ftp-chi.osuosl.org (ftp-chi.osuosl.org)|64.50.236.52|:80... connected.
+#HTTP request sent, awaiting response... 200 OK
+#Length: 67287029 (64M) [application/x-java-archive]
+#Saving to: ‘jenkins.war’
+
+#jenkins.war                 100%[===========================================>]  64.17M  3.24MB/s    in 27s     
+
+#2021-02-12 00:35:44 (2.37 MB/s) - ‘jenkins.war’ saved [67287029/67287029]
+
+#*/
+
+wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
+java -jar jenkins.war --httpPort=80 --prefix=/dashboard
+
+# [folpindo@localhost jenkins]$ sudo java -jar jenkins.war --httpPort=80 --prefix=/dashboard
+[sudo] password for folpindo: 
+Running from: /home/folpindo/projects/jenkins/jenkins.war
+webroot: $user.home/.jenkins
+2021-02-11 16:44:17.790+0000 [id=1]	INFO	org.eclipse.jetty.util.log.Log#initialized: Logging initialized @707ms to org.eclipse.jetty.util.log.JavaUtilLog
+2021-02-11 16:44:18.049+0000 [id=1]	INFO	winstone.Logger#logInternal: Beginning extraction from war file
+2021-02-11 16:44:19.866+0000 [id=1]	INFO	org.eclipse.jetty.server.Server#doStart: jetty-9.4.33.v20201020; built: 2020-10-20T23:39:24.803Z; git: 1be68755656cef678b79a2ef1c2ebbca99e25420; jvm 1.8.0_272-b10
+2021-02-11 16:44:20.384+0000 [id=1]	INFO	o.e.j.w.StandardDescriptorProcessor#visitServlet: NO JSP Support for /dashboard, did not find org.eclipse.jetty.jsp.JettyJspServlet
+2021-02-11 16:44:20.486+0000 [id=1]	INFO	o.e.j.s.s.DefaultSessionIdManager#doStart: DefaultSessionIdManager workerName=node0
+2021-02-11 16:44:20.487+0000 [id=1]	INFO	o.e.j.s.s.DefaultSessionIdManager#doStart: No SessionScavenger set, using defaults
+2021-02-11 16:44:20.488+0000 [id=1]	INFO	o.e.j.server.session.HouseKeeper#startScavenging: node0 Scavenging every 600000ms
+2021-02-11 16:44:21.032+0000 [id=1]	INFO	hudson.WebAppMain#contextInitialized: Jenkins home directory: /root/.jenkins found at: $user.home/.jenkins
+2021-02-11 16:44:21.332+0000 [id=1]	INFO	o.e.j.s.handler.ContextHandler#doStart: Started w.@76318a7d{Jenkins v2.263.4,/dashboard,file:///root/.jenkins/war/,AVAILABLE}{/root/.jenkins/war}
+2021-02-11 16:44:21.438+0000 [id=1]	INFO	o.e.j.server.AbstractConnector#doStart: Started ServerConnector@5c86a017{HTTP/1.1, (http/1.1)}{0.0.0.0:80}
+2021-02-11 16:44:21.448+0000 [id=1]	INFO	org.eclipse.jetty.server.Server#doStart: Started @4365ms
+2021-02-11 16:44:21.461+0000 [id=21]	INFO	winstone.Logger#logInternal: Winstone Servlet Engine running: controlPort=disabled
+2021-02-11 16:44:23.748+0000 [id=28]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+2021-02-11 16:44:23.805+0000 [id=27]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+2021-02-11 16:44:25.882+0000 [id=27]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+2021-02-11 16:44:25.890+0000 [id=29]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+2021-02-11 16:44:25.937+0000 [id=27]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+2021-02-11 16:44:27.092+0000 [id=26]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+2021-02-11 16:44:27.092+0000 [id=26]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+2021-02-11 16:44:27.093+0000 [id=26]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+2021-02-11 16:44:27.093+0000 [id=26]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+2021-02-11 16:44:27.164+0000 [id=42]	INFO	hudson.model.AsyncPeriodicWork#lambda$doRun$0: Started Download metadata
+2021-02-11 16:44:27.254+0000 [id=42]	INFO	hudson.util.Retrier#start: Attempt #1 to do the action check updates server
+2021-02-11 16:44:28.842+0000 [id=27]	INFO	o.s.c.s.AbstractApplicationContext#prepareRefresh: Refreshing org.springframework.web.context.support.StaticWebApplicationContext@2cc8e8df: display name [Root WebApplicationContext]; startup date [Fri Feb 12 00:44:28 PST 2021]; root of context hierarchy
+2021-02-11 16:44:28.844+0000 [id=27]	INFO	o.s.c.s.AbstractApplicationContext#obtainFreshBeanFactory: Bean factory for application context [org.springframework.web.context.support.StaticWebApplicationContext@2cc8e8df]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1eced3fd
+2021-02-11 16:44:28.862+0000 [id=27]	INFO	o.s.b.f.s.DefaultListableBeanFactory#preInstantiateSingletons: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1eced3fd: defining beans [authenticationManager]; root of factory hierarchy
+2021-02-11 16:44:29.131+0000 [id=27]	INFO	o.s.c.s.AbstractApplicationContext#prepareRefresh: Refreshing org.springframework.web.context.support.StaticWebApplicationContext@5322d184: display name [Root WebApplicationContext]; startup date [Fri Feb 12 00:44:29 PST 2021]; root of context hierarchy
+2021-02-11 16:44:29.132+0000 [id=27]	INFO	o.s.c.s.AbstractApplicationContext#obtainFreshBeanFactory: Bean factory for application context [org.springframework.web.context.support.StaticWebApplicationContext@5322d184]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1d2e1b7d
+2021-02-11 16:44:29.133+0000 [id=27]	INFO	o.s.b.f.s.DefaultListableBeanFactory#preInstantiateSingletons: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1d2e1b7d: defining beans [filter,legacy]; root of factory hierarchy
+2021-02-11 16:44:29.433+0000 [id=27]	INFO	jenkins.install.SetupWizard#init: 
+
+*************************************************************
+*************************************************************
+*************************************************************
+
+Jenkins initial setup is required. An admin user has been created and a password generated.
+Please use the following password to proceed to installation:
+
+75f6395f3b0d44d4bdf7a202f9c9741c
+
+This may also be found at: /root/.jenkins/secrets/initialAdminPassword
+
+*************************************************************
+*************************************************************
+*************************************************************
+^C[folpindo@localhost jenkins]$ sudo java -jar jenkins.war --httpPort=8080 --prefix=/dashboard
+Running from: /home/folpindo/projects/jenkins/jenkins.war
+webroot: $user.home/.jenkins
+2021-02-11 16:46:12.298+0000 [id=1]	INFO	org.eclipse.jetty.util.log.Log#initialized: Logging initialized @1089ms to org.eclipse.jetty.util.log.JavaUtilLog
+2021-02-11 16:46:12.637+0000 [id=1]	INFO	winstone.Logger#logInternal: Beginning extraction from war file
+2021-02-11 16:46:12.819+0000 [id=1]	INFO	org.eclipse.jetty.server.Server#doStart: jetty-9.4.33.v20201020; built: 2020-10-20T23:39:24.803Z; git: 1be68755656cef678b79a2ef1c2ebbca99e25420; jvm 1.8.0_272-b10
+2021-02-11 16:46:13.464+0000 [id=1]	INFO	o.e.j.w.StandardDescriptorProcessor#visitServlet: NO JSP Support for /dashboard, did not find org.eclipse.jetty.jsp.JettyJspServlet
+2021-02-11 16:46:13.609+0000 [id=1]	INFO	o.e.j.s.s.DefaultSessionIdManager#doStart: DefaultSessionIdManager workerName=node0
+2021-02-11 16:46:13.610+0000 [id=1]	INFO	o.e.j.s.s.DefaultSessionIdManager#doStart: No SessionScavenger set, using defaults
+2021-02-11 16:46:13.611+0000 [id=1]	INFO	o.e.j.server.session.HouseKeeper#startScavenging: node0 Scavenging every 600000ms
+2021-02-11 16:46:14.311+0000 [id=1]	INFO	hudson.WebAppMain#contextInitialized: Jenkins home directory: /root/.jenkins found at: $user.home/.jenkins
+2021-02-11 16:46:14.614+0000 [id=1]	INFO	o.e.j.s.handler.ContextHandler#doStart: Started w.@2eea88a1{Jenkins v2.263.4,/dashboard,file:///root/.jenkins/war/,AVAILABLE}{/root/.jenkins/war}
+2021-02-11 16:46:14.661+0000 [id=1]	INFO	o.e.j.server.AbstractConnector#doStart: Started ServerConnector@4157f54e{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2021-02-11 16:46:14.661+0000 [id=1]	INFO	org.eclipse.jetty.server.Server#doStart: Started @3453ms
+2021-02-11 16:46:14.662+0000 [id=21]	INFO	winstone.Logger#logInternal: Winstone Servlet Engine running: controlPort=disabled
+2021-02-11 16:46:16.711+0000 [id=28]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+2021-02-11 16:46:17.030+0000 [id=29]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+2021-02-11 16:46:19.035+0000 [id=26]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+2021-02-11 16:46:19.043+0000 [id=26]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+2021-02-11 16:46:19.072+0000 [id=27]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+2021-02-11 16:46:19.789+0000 [id=28]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+2021-02-11 16:46:19.790+0000 [id=29]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+2021-02-11 16:46:19.790+0000 [id=29]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+2021-02-11 16:46:19.791+0000 [id=28]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+2021-02-11 16:46:19.861+0000 [id=42]	INFO	hudson.model.AsyncPeriodicWork#lambda$doRun$0: Started Download metadata
+2021-02-11 16:46:19.889+0000 [id=42]	INFO	hudson.model.AsyncPeriodicWork#lambda$doRun$0: Finished Download metadata. 23 ms
+2021-02-11 16:46:20.791+0000 [id=29]	INFO	o.s.c.s.AbstractApplicationContext#prepareRefresh: Refreshing org.springframework.web.context.support.StaticWebApplicationContext@197c6b8f: display name [Root WebApplicationContext]; startup date [Fri Feb 12 00:46:20 PST 2021]; root of context hierarchy
+2021-02-11 16:46:20.791+0000 [id=29]	INFO	o.s.c.s.AbstractApplicationContext#obtainFreshBeanFactory: Bean factory for application context [org.springframework.web.context.support.StaticWebApplicationContext@197c6b8f]: org.springframework.beans.factory.support.DefaultListableBeanFactory@11da512e
+2021-02-11 16:46:20.802+0000 [id=29]	INFO	o.s.b.f.s.DefaultListableBeanFactory#preInstantiateSingletons: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@11da512e: defining beans [authenticationManager]; root of factory hierarchy
+2021-02-11 16:46:21.165+0000 [id=29]	INFO	o.s.c.s.AbstractApplicationContext#prepareRefresh: Refreshing org.springframework.web.context.support.StaticWebApplicationContext@28ddd5e5: display name [Root WebApplicationContext]; startup date [Fri Feb 12 00:46:21 PST 2021]; root of context hierarchy
+2021-02-11 16:46:21.165+0000 [id=29]	INFO	o.s.c.s.AbstractApplicationContext#obtainFreshBeanFactory: Bean factory for application context [org.springframework.web.context.support.StaticWebApplicationContext@28ddd5e5]: org.springframework.beans.factory.support.DefaultListableBeanFactory@2859e09e
+2021-02-11 16:46:21.166+0000 [id=29]	INFO	o.s.b.f.s.DefaultListableBeanFactory#preInstantiateSingletons: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2859e09e: defining beans [filter,legacy]; root of factory hierarchy
+2021-02-11 16:46:21.310+0000 [id=29]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+2021-02-11 16:46:21.348+0000 [id=20]	INFO	hudson.WebAppMain$3#run: Jenkins is fully up and running
+
